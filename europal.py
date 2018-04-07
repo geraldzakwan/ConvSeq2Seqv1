@@ -40,7 +40,7 @@ def read_file(path):
     with open_file(path) as f:
         # Need to make sure about
         # Source : https://github.com/germangh/python-progressbar/blob/master/progressbar/progressbar.py
-        for line in bar(f):
+        for line in bar(list(f)):
             words = split_sentence(line)
             yield words
 
