@@ -38,7 +38,9 @@ def read_file(path):
     n_lines = count_lines(path)
     bar = progressbar.ProgressBar()
     with open_file(path) as f:
-        for line in bar(f, maxval=n_lines):
+        # Need to make sure about
+        # Source : https://github.com/germangh/python-progressbar/blob/master/progressbar/progressbar.py
+        for line in bar(f):
             words = split_sentence(line)
             yield words
 
