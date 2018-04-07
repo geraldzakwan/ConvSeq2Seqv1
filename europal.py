@@ -38,7 +38,7 @@ def read_file(path):
     n_lines = count_lines(path)
     bar = progressbar.ProgressBar()
     with open_file(path) as f:
-        for line in bar(f, max_value=n_lines):
+        for line in bar(f, maxval=n_lines):
             words = split_sentence(line)
             yield words
 
